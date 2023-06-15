@@ -10,7 +10,7 @@ provider "google" {
 }
 
 module "gittest" {
-  source = "git::git@github.com:cw-Widad/terraform-week/.git//modules/storage"
+  source = "git::git@github.com:cw-Widad/terraform-week.git"
   environment-prefix = var.environment-prefix
 }
 /*
