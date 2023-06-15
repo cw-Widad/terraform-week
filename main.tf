@@ -3,12 +3,17 @@ terraform {
     bucket  = "terraform-state-widad"
   }
 }
+//
 provider "google" {
   project     = "cw-academy-sandbox-widad"
   region      = "europe-west1"
 }
 
-
+module "gittest" {
+  source = "git::git@github.com:cw-Widad/terraform-week/.git//modules/storage"
+  environment-prefix = var.environment-prefix
+}
+/*
 module "images-bucket" {
   source = "./modules/services/storage"
   environment-prefix = var.environment-prefix
@@ -25,3 +30,4 @@ module "images-service" {
 //module "service_account" {
  // source = "./modules/service_account"
 //}
+*/
